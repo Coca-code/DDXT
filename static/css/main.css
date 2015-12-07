@@ -1,0 +1,316 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2014-12-9, 0:47:07
+    Author     : cheng
+*/
+html{
+    background: rgb(245,245,245);
+    font-family:  'Microsoft Yahei';
+}
+.main-wrapper{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family:  'Microsoft Yahei';
+}
+
+body {
+    font-size: 14px;
+    line-height: 22px;
+    overflow-x: hidden;
+    font-family:  Microsoft Yahei,Helvetica Neue, Helvetica, Arial;
+
+}
+.interface {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif !important;
+}
+
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    color: #fff;
+    background-color: #4778C7;
+}
+
+.header img{
+   position: absolute;
+  max-width: 56px;
+  max-height: 56px;
+  left: 3.25rem;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+    background-size: center center;
+}
+
+.header span{
+    position: absolute;
+    display: block;
+    left: 7.5rem;
+    line-height: 5rem;
+    font-size: 2em;
+    font-weight: normal;
+
+}
+
+.main-menu{
+    position: absolute;
+    width: 17.5rem;
+    min-height: 50rem;
+    top:5rem;
+    left: 0;
+    bottom:0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 0;
+    border-right: 1px solid #bbb;
+    background-color: #4679C7;
+    
+}
+
+.personInfo{
+    position: relative;
+    height: 6.5rem;
+    line-height: 6.5rem;
+    margin-bottom: 0.25rem;
+    background-color:#7DABFF;
+}
+
+.personInfo > img{
+    position: absolute;
+    max-width: 130px;
+    max-height:130px;
+    left: 0;
+    bottom: 0;
+    background-size: center center;
+  
+}
+
+.title-p{
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 8.5rem;
+    color: #fff;
+    font-size: 1.25em;
+    font-weight: normal;
+}
+
+.personInfo > div > span:nth-of-type(1){
+    top:-0.6rem; 
+}
+
+.personInfo > div > span:nth-of-type(2){
+    top:1rem; 
+}
+
+
+/*菜单*/
+.add-border{
+    border-right: 5px solid #F1A83F;
+    color: #F1A83F!important;
+}
+
+.DDXT-menu li{
+    background-color: #577FD1;
+    max-width: 100%;
+    height: 5rem;
+    line-height: 5rem;
+    margin-bottom: 0.25rem;
+    display: block;
+    text-align: center;
+}
+
+
+.DDXT-menu li img{
+    width: 10%;
+    margin-bottom: 0.5rem;
+}
+
+
+.DDXT-menu li a{
+    display: inline;
+    margin-left: 0.8rem;
+    font-size: 1.3em;
+    font-weight: normal;
+    color: #fff;
+}
+
+
+.DDXT-menu li a:visited{
+    display: block;
+}
+
+
+.DDXT-menu li a:hover {
+    text-decoration: none;
+    color: #F1A83F;
+}
+
+ul.toc_section {
+    font-size: 14px;
+    line-height: 14px;
+    margin: 5px 0 0 0;
+    padding-left: 0px;
+    list-style-type: none;
+    font-family: Lucida Grande;
+}
+.toc_section li {
+    cursor: pointer;
+    margin: 0 0 3px 0;
+}
+.toc_section li a {
+    text-decoration: none;
+}
+.toc_section li a:hover {
+    text-decoration: underline;
+}
+.main-content{
+    position: absolute;
+    top:4.98rem;
+    left: 17.5rem;
+    right: 0;
+    background-color: #f5f5f5;
+    font-size: 14px;
+}
+
+.main-content > tr > td{
+    margin: 0;
+    padding: 0;
+}
+
+
+.main-content p{
+    text-indent: 2em;
+    margin-top: 2em;
+    max-width:800px;
+}
+
+.t1{
+    position: absolute;
+    display: block;
+    top:3.25rem;
+    left: 1.5rem;
+    border-bottom: 3px solid #4679C7;
+    padding-bottom: 0.5rem;
+    color:#333;
+    font-size: 1.4em;
+    font-weight: 700;
+            
+}
+
+
+
+.shim-table{
+    width: 90%;
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+.shim-table td,.shim-table th{
+    border: 1px solid gray;
+    padding:10px;
+}
+
+
+:not(pre) > code[class*="language-"] {
+    padding: .1em;
+    border-radius: .3em;
+}
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+    background: #f5f2f0;
+}
+code[class*="language-"] {
+    color: #d14;
+}
+
+
+/**************************************************************************
+*                                                  兼容处理                                                       *
+* *************************************************************************/
+/*960-1024*/
+@media screen and (min-width:960px) and (max-width:1024px) {
+html {font-size: 16.5px}
+}
+
+/*1024-1280*/
+@media screen and (min-width:1024px) and (max-width:1280px){
+	html {font-size:16.5px}
+
+}
+
+/*1280-1366 笔记本*/
+@media screen and (min-width:1280px) and (max-width:1366px){
+    html {font-size:17px;}
+}
+
+
+/*1366-1600*/
+@media screen and (min-width:1367px) and (max-width:1600px){
+    html {font-size:18.5px}
+
+}
+
+/*>1600*/
+@media screen and (min-width:1600px) {
+    html {font-size:20px}
+
+}
+
+
+
+
+/**************************************************************************
+*                           modal.css                                     *
+* *************************************************************************/
+
+.modal-bg{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+
+    overflow: hidden;
+
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(236, 236, 236, 0.39);
+}
+.modal-box{
+    position: absolute;
+    overflow: hidden;
+
+
+}
+.modal-bg,.modal-box{
+    transition-property:all;
+    transition-duration: 0.24s;
+    transition-timing-function: ease-out;
+    /* Firefox 4 */
+    -moz-transition-property:all;
+    -moz-transition-duration:0.24s;
+    -moz-transition-timing-function:ease-out;
+    /* Safari 和 Chrome */
+    -webkit-transition-property:all;
+    -webkit-transition-duration:0.24s;
+    -webkit-transition-timing-function:ease-out;
+    /* Opera */
+    -o-transition-property:all;
+    -o-transition-duration:0.24s;
+    -o-transition-timing-function:ease-out;
+}
+
+
+

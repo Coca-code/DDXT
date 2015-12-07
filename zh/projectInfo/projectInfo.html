@@ -1,0 +1,208 @@
+<!--
+***********************************************************************
+*@CONTENT:projectInfo.html
+*@AUTHOR:YMF_WX1981@HOTMAIL.COM
+*@DATE:2015-11-25
+*
+***********************************************************************
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>项目信息-狮子特工督导系统</title>
+    <style>
+    .search {
+        position: absolute;
+        top: 3rem;
+        right: -2.8rem;
+        width: 16rem;
+        height: 2rem;
+        line-height: 2rem;
+    }
+    
+    .search input {
+        width: 7rem;
+        height: 1.4rem;
+        border: 1px solid #D5D5D5;
+    }
+    
+    .search img {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        right: 10rem;
+    }
+    
+    .search button {
+        width: auto;
+        height: 1.4rem;
+        margin-left: 0.6rem;
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+        background-color: #fff;
+        border: 1px solid #D5D5D5;
+        color: #696969;
+    }
+    
+    .projectInfo-tab {
+        width: 100%;
+        left: 1.5rem;
+        height: inherit;
+        position: absolute;
+    }
+    
+    .projectInfo-tab ul li:nth-of-type(1),
+    .projectInfo-tab ul li:nth-of-type(2),
+    .projectInfo-tab ul li:nth-of-type(3) {
+        display: block;
+        position: absolute;
+        font-size: 1.3em;
+        font-weight: 700;
+        text-align: center;
+        top: 3.25rem;
+    }
+    
+
+    
+    .projectInfo-tab ul li:nth-of-type(2) {
+        left: 5.9rem;
+    }
+    
+    .projectInfo-tab ul li:nth-of-type(3) {
+        left: 10.9rem;
+    }
+    
+    .projectInfo-tab ul li a:link,
+    .projectInfo-tab ul li a:visited {
+        color: #333;
+    }
+    
+    .projectInfo-tab ul li a:hover,
+    .projectInfo-tab ul li a:active {
+        color: #4679C7;
+        border-bottom: 3px solid #4679C7;
+        padding-bottom: 0.5rem;
+    }
+    
+    .projectInfo-content {
+ 
+        min-height: 29.2rem;
+        position: absolute;
+        top: 5.5rem;
+        left: 1.5rem;
+        right: 1.5rem;
+        margin: auto;
+        padding: 1.5rem;
+        background-color: #fff;
+        -webkit-box-shadow: 1px 1px 6px 2px #dcdcdc;
+        box-shadow: 1px 1px 6px 2px #dcdcdc;
+
+    }
+    
+    .tab-title-inner {
+        font-size: 1.125em;
+        color: #333;
+        font-weight: normal;
+    }
+    
+    .tab-title-inner ul {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  top: 1rem;
+  text-align: center;
+  height: 3.6rem;
+  line-height: 3.6rem;
+  margin: auto;
+  border-bottom: 1px solid #D5D5D5;
+  overflow: hidden;
+
+    }
+    
+    .tab-title-inner ul li {
+        float: left;
+        height: 3rem;
+        line-height: 3rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        text-align: left;
+    }
+
+     .tab-title-inner ul li:nth-of-type(1) {
+        margin-left: 1.5rem;
+    }
+    
+    .tab-title-inner ul li:nth-of-type(2) {
+        margin-left: 1.6rem;
+    }
+    
+    .tab-title-inner ul li:nth-of-type(3) {
+        margin-left: 3rem;
+    }
+    
+    .tab-title-inner ul li:nth-of-type(4) {
+        margin-left: 8.8rem;
+    }
+    
+    .tab-title-inner ul li:nth-of-type(5) {
+        margin-left: 2.2rem;
+    }
+    
+    .tab-title-inner ul li:nth-of-type(6) {
+        margin-left: 4.2rem;
+    }
+    
+    .tab-title-inner ul li:nth-of-type(7) {
+        margin-left: 4.2rem;
+    }
+    
+    .tab-title-inner ul li:nth-of-type(8) {
+        margin-left: 2.2rem;
+    }
+
+ /**************************************************************************
+*                                                  兼容处理                                                       *
+* *************************************************************************/
+
+    /*1280-1366 笔记本*/
+@media screen and (min-width:1280px) and (max-width:1366px) {
+	.search{right:-2rem;}
+	.doning-content ul li:nth-of-type(2){ margin-left: 6.2rem!important;}
+	.doning-content ul li:nth-of-type(3){ margin-left: 1rem !important;}
+	.doning-content ul li:nth-of-type(4){ margin-left: 0.6rem!important;}
+	.doning-content ul li:nth-of-type(5){ margin-left:1rem !important;}
+	.doning-content ul li:nth-of-type(6){ margin-left: 0.6rem !important;}
+	.doning-content ul li:nth-of-type(7){ margin-left:1.5rem !important;}
+	.doning-content ul li:nth-of-type(8){ margin-left: 1.7rem !important;}
+}
+    </style>
+</head>
+
+<body ms-controller="main">
+    <!--Tab切换按钮模块-->
+    <div class="projectInfo-tab">
+        <ul>
+            <li ms-repeat="arrayProjectInfo">
+                <a ms-attr-href="el.src" ms-click="projectInfoChange(el.src,$event)" class="tab-a">{{el.text}}</a>
+            </li>
+        </ul>
+        <!--搜索-->
+        <div class="search">
+            <img src="static/images/glass.png" alt="狮子特工">
+            <input type="text" name="" value=""  />
+            <button type="submit" value="searching">查询</button>
+            <button type="submit" value="searching">查看成员完成度</button>
+        </div>
+    </div>
+    <!--项目内容模块-->
+    <div ms-include-src="infoPath" class="projectInfo-content" id="projectInfo-content">
+    </div>
+</body>
+
+</html>

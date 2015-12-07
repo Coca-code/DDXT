@@ -1,0 +1,255 @@
+<!--
+***********************************************************************
+*@CONTENT:personManage.html
+*@AUTHOR:YMF_WX1981@HOTMAIL.COM
+*@DATE:2015-11-24
+*
+***********************************************************************
+-->
+
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>人员管理-狮子特工督导系统</title>
+</head>
+
+<body ms-controller="main">
+
+<style>
+.p-wrapper{
+	width: 100%; 
+	height: 100%;   
+	margin: 0 auto;
+	padding: 0;        
+}
+
+.struct-t-1{
+    display: block;
+    position: absolute;
+    font-size: 1.3em;
+    color: #333;
+    font-weight: 700;
+    border-bottom: 3px solid #4679C7;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    top: 3.25rem;
+    left: 0.9rem;
+}
+
+
+
+	.per-menu{
+    position: absolute;
+    top:5.5rem;
+    width: 23.48%;
+    min-height: 38rem;
+ 	left: 0.9rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1px 6px 2px #dcdcdc;
+    box-shadow: 1px 1px 6px 2px #dcdcdc;
+	}
+
+
+
+	.ul-level-1 > li{
+		max-width: 17rem;
+		min-height: 2.8rem; 
+		line-height: 2.8rem;	
+		margin: 0 auto;
+		text-align: left;
+		background-color: #4D80C2;
+		border-bottom: 1px solid #ccc;
+	}
+
+	.ul-level-1 li a{
+		display: block; 
+		max-width: 17rem;
+		min-height: 2.8rem; 
+		line-height: 2.8rem;
+		margin-left: 1rem;
+		color: #fff;
+		font-size: 1.25em;
+		cursor: pointer;
+
+	}
+
+	.ul-level-1 > li:first-child{
+		background-color: #4679C7;
+		font-weight: 700;
+
+		border-radius:0.6rem 0.6rem 0 0;
+		-webkit-border-radius: 0.6rem 0.6rem 0 0;
+	    -moz-border-radius: 0.6rem 0.6rem 0 0;
+	}
+
+	.ul-level-1 > li:last-child{
+		border-radius:0 0 0.6rem 0.6rem;
+		-webkit-border-radius:0 0 0.6rem 0.6rem;
+	    -moz-border-radius: 0 0 0.6rem 0.6rem;
+	}
+
+	.ul-level-2 > li{
+		font-size: 0.8em;
+		border-bottom: 1px dashed #ccc;
+		background-color: #7CA3D5;
+	}
+
+	.ul-level-2 > li:last-child{
+		border: none;
+	}
+
+	.ul-level-2 li a{
+		display: block; 
+		width: 17rem;
+		min-height: 2.8rem; 
+		line-height: 2.8rem;
+		margin-left: 1.5rem;
+		color: #fff;
+		cursor: pointer;
+	}
+
+.struct-t-2{
+    display: block;
+    position: absolute;
+    font-size: 1.3em;
+    color: #333;
+    font-weight: 700;
+    border-bottom: 3px solid #4679C7;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    top: 3.25rem;
+    left: 24rem;
+}
+
+.per-detail{
+	float: right;
+	width: 64%;
+	height: auto; 
+}
+
+.per-content{
+    position: absolute;
+    top:5.5rem;
+    width:63.6%;
+    min-height: 38rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    left: 24rem;
+    right: 0.9rem;
+    -webkit-box-shadow: 1px 1px 6px 2px #dcdcdc;
+    box-shadow: 1px 1px 6px 2px #dcdcdc;
+}
+
+.per-content ul{
+	width: 50rem;
+	min-height: 3.4rem;
+	line-height: 3.4rem;
+	font-size: 1.25em;
+	color: #666;
+	font-weight: normal;
+	border-bottom: 1px solid #ccc;
+}
+
+
+.per-content ul li{
+	float: left;
+	
+
+}
+
+.per-content ul li:nth-of-type(2){
+	margin-left: 1.9rem;
+}
+.per-content ul li:nth-of-type(3){
+	margin-left: 1.7rem;
+}
+.per-content ul li:nth-of-type(4){
+	margin-left: 2.2rem;
+}
+.per-content ul li:nth-of-type(5){
+	margin-left: 3.2rem;
+}
+.per-content ul li:nth-of-type(6){
+	margin-left: 9.1rem;
+}
+.per-content ul li:nth-of-type(7){
+	margin-left: 6.1rem;
+}
+.per-content ul li:nth-of-type(8){
+	margin-left: 5rem;
+}
+
+
+
+.per-list{
+	position: relative; 
+	font-size: 0.8em;
+}
+
+
+
+.per-list ul{
+	display: block;
+	position: absolute;
+	width: 50rem;
+	min-height: 3.4rem;
+	line-height: 3.4rem;  
+	border-bottom: 1px dashed #ccc !important;
+}
+
+
+.per-list ul li:nth-of-type(2){
+	margin-left: 1.3rem;
+}
+.per-list ul li:nth-of-type(3){
+	margin-left: 3.7rem;
+}
+.per-list ul li:nth-of-type(4){
+	margin-left: 3.2rem;
+}
+.per-list ul li:nth-of-type(5){
+	margin-left: 2.8rem;
+}
+.per-list ul li:nth-of-type(6){
+	margin-left: 5.2rem;
+}
+.per-list ul li:nth-of-type(7){
+	margin-left: 3.5rem;
+}
+
+.per-list ul li:nth-of-type(8){
+	margin-left: 5.3rem;
+}
+
+.per-list ul li:nth-of-type(8) div span:nth-of-type(2){
+	margin-left: 1rem;
+}
+	
+</style>
+<span class="struct-t-1">组织架构</span>
+<!--菜单模块-->
+<div class="per-menu">
+	<ul class="ul-level-1">
+    <li ms-repeat="arrayPersonManager">
+        <a ms-href="el.src" ms-click="changePersonManager(el.src,$event)">{{el.text}}</a>
+    </li>
+</ul>
+</div>
+
+<!--人员详细模块-->
+<div class="per-detail">
+	<span class="struct-t-2" ms-repeat="arrayPersonManager"  ms-if="array.size() > 0" ms-click="active($index)" ms-visible="$index === currentIndex">{{el.text}}</span>
+	<div ms-include-src="personPath" class="per-content"  id="per-content"></div>	
+</div>
+
+
+</body>
+</html>
+
+
+
+
+

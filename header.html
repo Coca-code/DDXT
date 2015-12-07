@@ -1,0 +1,59 @@
+<!--
+***********************************************************************
+*@CONTENT:header.html
+*@AUTHOR:YMF_WX1981@HOTMAIL.COM
+*@DATE:2015-11-26
+*
+***********************************************************************
+-->
+<!--头部Banner-->
+<td class="header" ms-controller="main">
+    <img src="static/images/logo_s_white.png" alt="狮子特工">
+    <span>狮子特工督导系统</span>
+    <div class="reg-and-login">
+        <ul>
+           <li ms-repeat="arrayLoginAndreg"> <img src="static/images/dd_user.png" alt="狮子特工"><a href="#" class="btn btn-primary">登录</a></li>
+           <li ms-repeat="arrayLoginAndreg"> <img src="static/images/dd_quit.png" alt="狮子特工"><a href="#" class="btn btn-primary">注册</a></li>
+        </ul>
+    </div>
+
+</td>
+<style>
+.reg-and-login {
+    position: absolute;
+    width: 15%;
+    height: 5rem;
+    line-height: 5rem;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.reg-and-login ul li {
+    float: left;
+}
+
+.reg-and-login ul li:nth-of-type(1) img {
+    position: absolute;
+    left: 0;
+}
+
+.reg-and-login ul li:nth-of-type(2) img {
+    position: absolute;
+    left: 4.8rem;
+}
+
+.reg-and-login ul li a {
+    position: absolute;
+    color: #fff;
+}
+
+.reg-and-login ul li:nth-of-type(1) a {
+    left: 1.8rem;
+}
+
+.reg-and-login ul li:nth-of-type(2) a {
+    left: 6.5rem;
+}
+</style>

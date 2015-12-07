@@ -1,0 +1,243 @@
+<!--
+***********************************************************************
+*@CONTENT:projectInit.html
+*@AUTHOR:YMF_WX1981@HOTMAIL.COM
+*@DATE:2015-11-25
+*
+***********************************************************************
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>项目发起-狮子特工督导系统</title>
+    <style>
+    .project-detail-img {
+        position: absolute;
+        width: 10rem;
+        height: 10rem;
+        right: 6rem;
+        top: 0;
+        bottom: 0;
+        margin:auto;
+        border: 1px solid #d5d5d5;
+        border-radius :0.2rem;
+        -webkit-border-radius :0.2rem;
+        -moz-border-radius :0.2rem;
+    }
+
+     .project-detail-img img{
+        width: 10rem;
+        height: 10rem;
+       /* background-size: 100% 100%;*/
+     }
+    
+    .project-detail {
+        font-size: 1.125em;
+    }
+    
+    .project-detail,
+    .department-structure {
+        position: absolute;
+        width: 75.5rem;
+        min-height: 12rem;
+        left: 1.5rem;
+        right: 1.5rem;
+        top: 5.35rem;
+        background-color: #fff;
+        box-shadow: 1px 1px 6px 2px #dcdcdc;
+        -webkit-box-shadow: 1px 1px 6px 2px #dcdcdc;
+        -moz-box-shadow: 1px 1px 6px 2px #dcdcdc;
+    }
+    
+    div.project-code-and-name {
+        position: absolute;
+        width: 70%;
+        min-height: 3rem;
+        top: 0;
+        left: 1.5rem;
+        right: 1.5rem;
+        border-bottom: 1px solid #d5d5d5;
+        z-index: 331;
+    }
+    
+    div.project-code-and-name ul {
+        display: inline-block;
+        width: 100%;
+    }
+    
+    div.project-code-and-name ul input {
+        margin-left: 1rem;
+        height: 1.4rem;
+        border: 1px solid #d5d5d5;
+    }
+    
+    div.project-code-and-name ul li {
+        position: absolute;
+        display: block;
+        width: 16.45rem;
+        line-height: 3rem;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    
+    div.project-code-and-name ul li:nth-of-type(2) {
+        left: 18rem;
+    }
+    
+    div.project-code-and-name ul li:nth-of-type(3) {
+        display: block;
+        position: absolute;
+        left: 36rem;
+    }
+    
+    div.project-code-and-name ul li:nth-of-type(3) span {
+        color: green;
+    }
+    
+    .department-structure-t {
+        top: 20rem;
+    }
+    
+    .department-structure {
+        top: 23rem;
+    }
+    
+    div.project-person-and-time > div {
+        position: absolute;
+        width: 16.45rem;
+        min-height: 8.15rem;
+        top: 3rem;
+        left: 1.5rem;
+        /*  border: 1px solid green;*/
+    }
+    
+    div.project-person-and-time div:nth-of-type(1),
+    div.project-person-and-time div:nth-of-type(2) {
+        width: 16.45rem;
+    }
+    
+    div.project-person-and-time div:nth-of-type(1) ul li,
+    div.project-person-and-time div:nth-of-type(2) ul li {
+        margin-bottom: 1rem;
+    }
+    
+    .m-l-2 {
+        margin-left: 1.7rem!important;
+    }
+    
+    .m-b-1 {
+        margin-bottom: 1rem;
+    }
+    
+    .m-t-12 {
+        margin-top: 1.3rem;
+    }
+    
+    div.project-person-and-time div:nth-of-type(1) ul li input,
+    div.project-person-and-time div:nth-of-type(2) ul li input {
+        margin-left: 1rem;
+        min-height: 1.4rem;
+        border: 1px solid #d5d5d5;
+    }
+    
+    div.project-person-and-time div:nth-of-type(2) {
+        left: 19.6rem;
+        /*     border: 1px solid red;*/
+    }
+    
+    div.project-person-and-time div:nth-of-type(3) {
+        width: 24.9rem;
+        min-height: 8.15rem;
+        left: 37.6rem;
+    }
+    
+    div.project-person-and-time > div:nth-of-type(3) textarea {
+        width: 16.4rem;
+        height: 4.2rem;
+        border: 1px solid #d5d5d5;
+    }
+    </style>
+</head>
+
+<body>
+    <!--项目详情标题-->
+    <h1 class="t1">项目详情</h1>
+    <!--项目详情模块-->
+    <div class="project-detail">
+        <!--成员照片-->
+        <div class="project-detail-img">
+           <img src="static/images/project-detail-img.png" alt="狮子特工">
+        </div>
+        <!--up-->
+        <div class="project-code-and-name">
+            <ul>
+                <li>项目代号:
+                    <input type="text" name="code" value="" />
+                </li>
+                <li>项目名称:
+                    <input type="text" name="pName" value="" />
+                </li>
+                <li>项目状态:
+                    <span>进行中</span>
+                </li>
+            </ul>
+        </div>
+        <!--down-->
+        <div class="project-person-and-time">
+            <!--UL-1-->
+            <div>
+                <ul>
+                    <li class="m-t-12">发起人:
+                        <input class=" m-l-2" type="text" name="opener" value="" />
+                    </li>
+                    <li>负责人:
+                        <input class=" m-l-2" type="text" name="charge" value="" />
+                    </li>
+                    <li>前置项目:
+                        <input type="text" name="p-pre" value="" />
+                    </li>
+                </ul>
+            </div>
+            <!--UL-2-->
+            <div>
+                <ul>
+                    <li class="m-t-12">开始时间:
+                        <input type="text" name="time-start" value="" />
+                    </li>
+                    <li>预期结束:
+                        <input type="text" name="time-end" value="" />
+                    </li>
+                    <li>可用工时:
+                        <input type="text" name="time-can-use" value="" />
+                    </li>
+                </ul>
+            </div>
+            <!--UL-3-->
+            <div>
+                <ul>
+                    <li class="m-t-12 m-b-1">项目描述:</li>
+                </ul>
+                <textarea name="yoursuggest" cols="50" rows="3"></textarea>
+            </div>
+        </div>
+    </div>
+    <!--组织结构标题-->
+    <h1 class="t1 department-structure-t">组织结构</h1>
+    <!--组织结构模块-->
+    <div class="department-structure">
+      <ul>
+          <li></li>
+           <li></li>
+            <li></li>
+             <li></li>
+              <li></li>
+               <li></li>
+      </ul>
+    </div>
+</body>
+
+</html>

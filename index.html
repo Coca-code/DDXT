@@ -1,0 +1,102 @@
+<!--
+***********************************************************************
+*@CONTENT:index.html
+*@AUTHOR:YMF_WX1981@HOTMAIL.COM
+*@DATE:2015-11-27
+*
+***********************************************************************
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>首页—狮子特工督导系统</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="./static/css/reset.css" media="all" />
+    <link rel="stylesheet" href="./static/css/bootstrap-modal.css" media="all" />
+    <link rel="stylesheet" href="./static/css/main.css" media="all" />
+    <link rel="icon" href="./static/images/sztg_icon.ico" media="all" />
+    <script src="static/script/jquery-2.1.1.js"></script>
+    <script src="static/script/ns-chart.min.js"></script>
+    <script src="static/script/bootstrap-modal.js"></script>
+    <script src="static/script/avalon.js"></script>
+    <script src="static/script/mmRequest.js"></script>
+    <script src="static/highlight/shCore.js"></script>
+    <script src="static/script/main.js"></script>
+  
+    <!--
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?b5ba55bedb540c637bd6b62081195ec2";
+       var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+       })();
+</script>
+-->
+    <style>
+    [ms-controller],
+    [ms-important],
+    .ms-controller,
+    .ms-important {
+        display: none;
+    }
+    </style>
+</head>
+
+<body ms-controller="main">
+    <table class="main-wrapper">
+        <!--头部-->
+        <tr>
+            <div ms-include-src="headerPath" data-include-rendered="highlight"></div>
+        </tr>
+        <tr>
+            <!--左侧Menu-->
+            <td class="main-menu" valign="top">
+                <!--人员信息-->
+                <div class="personInfo">
+                    <div>
+                        <span class="title-p">金晓</span>
+                        <span class="title-p">13888888888</span>
+                    </div>
+                    <img src="static/images/user_img.jpg" alt="狮子特工">
+                </div>
+                <!--  <a class="personInfo" ms-href="#{{userLanguage}}/personInfo.html" 
+                       ms-click="changePath"  data-include-rendered="highlight" ms-text="$personInfo"></a>-->
+                <ul class="DDXT-menu" id="DDXT-menu">
+                    <li ms-hover="add-border">
+                        <!--代办事项-->
+                        <img src="static/images/menu_icon_1.png" alt="狮子特工">
+                        <a class="toDo" ms-attr-href="#{{userLanguage}}/toDo/toDo.html" ms-click="changePath" data-include-rendered="highlight" ms-html="$toDo">
+                        </a>
+                    </li>
+                    <li ms-hover="add-border">
+                        <!--项目信息-->
+                        <img src="static/images/menu_icon_2.png" alt="狮子特工">
+                        <a class="toc_title" ms-attr-href="#{{userLanguage}}/projectInfo/projectInfo.html" ms-click="changePath" data-include-rendered="highlight" ms-text="$projectInfo">
+                        </a>
+                    </li>
+                    <li ms-hover="add-border">
+                        <!--项目发起-->
+                        <img src="static/images/menu_icon_3.png" alt="狮子特工">
+                        <a class="toc_title" ms-attr-href="#{{userLanguage}}/projectInit/projectInit.html" ms-click="changePath" data-include-rendered="highlight" ms-text="$projectInit">
+                        </a>
+                    </li>
+                    <li ms-hover="add-border">
+                        <!--人员管理-->
+                        <img src="static/images/menu_icon_4.png" alt="狮子特工">
+                        <a class="toc_title" ms-attr-href="#{{userLanguage}}/personManage/personManage.html" ms-click="changePath" data-include-rendered="highlight" ms-text="$personManage">
+                        </a>
+                    </li>
+                </ul>
+                <!--右侧主内容-->
+                <td class="main-content" valign="top">
+                    <div ms-include-src="currentPath" data-include-rendered="highlight"></div>
+                </td>
+        </tr>
+    </table>
+</body>
+
+</html>

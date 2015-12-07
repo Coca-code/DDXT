@@ -1,0 +1,819 @@
+
+<!DOCTYPE html>
+<!--
+***********************************************************************
+*@CONTENT:toDo.html
+*@AUTHOR:YMF_WX1981@HOTMAIL.COM
+*@DATE:2015-11-27
+*
+***********************************************************************
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>待办事项-狮子特工督导系统</title>
+    <style>
+    html,body {
+        font-family: "微软雅黑";
+    }
+    
+    .todo-wrapper {
+        position: relative;
+        margin: 0 auto;
+        background-color: #F5F5F5;
+        clear: both;
+    }
+    
+    .project-info {
+        position: absolute;
+        /* width: 83%; */
+        min-height: 12rem;
+        left: 1.5rem;
+        right: 1.5rem;
+        top: 5.6rem;
+        margin: auto;
+        background-color: #fff;
+        box-shadow: 1px 1px 6px 2px #dcdcdc;
+        -webkit-box-shadow: 1px 1px 6px 2px #dcdcdc;
+        -moz-box-shadow: 1px 1px 6px 2px #dcdcdc;
+    }
+    
+    .project-1 {
+
+     font-size: 1.125em;
+    }
+    
+    .project-1 ul {
+
+    left: 1.5rem;
+    right: 1.5rem;
+    border-bottom: 1px solid #d5d5d5;
+    position: absolute;
+
+    }
+    
+    .project-2 ul {
+        margin-top: 3.6rem;
+    }
+    
+    .project-3 ul {
+        margin-top: 7.2rem;
+    }
+    
+    .project-1 ul li {
+        float: left;
+        height: 3.6rem;
+        line-height: 3.6rem;
+        text-align: left;
+        /*border:1px solid red;*/
+    }
+    
+    .project-1 ul li:nth-of-type(1) span {
+        display: inline-block;
+        width: 4rem;
+        margin-left: 1rem;
+        color: #696969;
+    }
+    
+    .project-1 ul li:nth-of-type(2) {
+        margin-left: 3rem;
+    }
+    
+    .project-1 ul li:nth-of-type(2) span {
+        display: inline-block;
+        width: 9rem;
+        margin-left: 1rem;
+        color: #696969;
+    }
+    
+    .project-1 ul li:nth-of-type(3) {
+        margin-left: 1rem;
+        width: 25.2rem;
+    }
+    
+    .project-1 ul li:nth-of-type(3) button {
+        width: auto;
+        height: 1.4rem;
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-color: #fff;
+        border: 1px solid #D5D5D5;
+        color: #696969;
+        font-size: 1em;
+        font-family: "微软雅黑";
+    }
+    
+    .project-1 ul li:nth-of-type(3) button:nth-of-type(1) {
+        right: 25.8rem;
+    }
+    
+    .project-1 ul li:nth-of-type(3) button:nth-of-type(2) {
+        right: 21.8rem;
+    }
+    
+    .project-1 ul li:nth-of-type(4) {
+        right: 0;
+        display: block;
+        position: absolute;
+    }
+    
+    .project-1 ul li:nth-of-type(4) span {
+        margin-left: 1rem;
+        color: #696969;
+    }
+    
+    .project-1 ul li:nth-of-type(4) button {
+        width: 5.5rem;
+        height: 1.8rem;
+        margin-left: 2.8rem;
+        border: 1px solid #A3702A;
+        border-radius: 0.1rem;
+        -webkit-border-radius: 0.1rem;
+        -moz-border-radius: 0.1rem;
+        background-color: #f2a640;
+        color: #fff;
+        font-family: "微软雅黑";
+    }
+    /*prograss bar*/
+    
+    .prograss-wrapper {
+        position: relative;
+        width: 12rem;
+        height: 2rem;
+        line-height: 2rem;
+        top: 50%;
+        margin-left: 5rem;
+        margin-top: -4.6rem;
+        /*border: 1px solid green;*/
+        clear: both;
+    }
+    
+    .progress-bar {
+        position: absolute;
+        display: inline-block;
+        width: 100%;
+        height: 0.7rem;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        border: 1px solid #D5D5D5;
+        border-radius: 0.7rem;
+        -webkit-border-radius: 0.7rem;
+        -moz-border-radius: 0.7rem;
+    }
+    
+    .progress-bar-inner {
+        position: relative;
+        height: 0.7rem;
+        border-radius: inherit;
+        background-color: #F1A83F;
+        /* box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1),  0 1px 5px rgba(0, 0, 0, 0.3),  0 4px 5px rgba(0, 0, 0, 0.3);  */
+        /*  animation: loader 4s ease;  
+		    -moz-animation: loader 4s ease;  
+		    -webkit-animation: loader 4s ease;  
+		    -o-animation: loader 4s ease; */
+    }
+    
+    .counter {
+        position: absolute;
+        width: 1rem;
+        height: 0.6rem;
+        line-height: 0.6rem;
+        top: -1rem;
+        right: 0;
+        color: #F1A83F;
+        font-size: 0.6em;
+        font-weight: normal;
+        background-color: #fff;
+        padding: 0.1rem;
+        /*animation:counter 4s ease;
+			-moz-animation:counter 4s ease;
+			-webkit-animation:counter 4s ease;
+			-o-animation:counter 4s ease;*/
+    }
+    
+    .round-shap {
+        position: absolute;
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        right: 0;
+        top: 0;
+        bottom: 0rem;
+        margin: auto;
+        border: 1px solid #D5D5D5;
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        background-color: #fff;
+        /* animation: counter 4s ease;
+		    -moz-animation: counter 4s ease;
+		    -webkit-animation: counter 4s ease;
+		    -o-animation: counter 4s ease;*/
+        z-index: 99;
+    }
+
+    .personal-progress-btn{
+           position: relative;
+           width: 22%;
+           line-height: 1.3rem;
+           margin-left: 20rem;
+           text-align: right;
+    }
+    /*@keyframes loader {  
+ 	from {  
+		width: 0%;  
+	} 
+
+	to {  
+   		width: 100%;  
+	}  
+}  
+
+ @-moz-keyframes loader {  
+ 	from {  
+		width: 0%;  
+	}  
+
+	to {  
+    	width: 100%;  
+	}  
+} 
+
+ @-webkit-keyframes loader {  
+ 	from {  
+		width: 0%;  
+	}  
+	to {  
+   	 	width: 100%;  
+	}  
+} 
+
+ @-o-keyframes loader {  
+ 	from {  
+		width: 0%;  
+	}  
+	to {  
+    	width: 100%;  
+	}  
+}  
+ */
+    /*项目一end*/
+    
+    .toDo-tab {
+        position: absolute;
+        width: inherit;
+        min-height: 3.5rem;
+        line-height: 3.5rem;
+        top: 18.5rem;
+        left: 1.5rem;
+        font-weight: 700;
+        font-size: 1.4em;
+        text-align: left;
+    }
+    
+    .toDo-tab ul li:nth-of-type(1),
+    .toDo-tab ul li:nth-of-type(2),
+    .toDo-tab ul li:nth-of-type(3) {
+        display: block;
+        float: left;
+    }
+    
+    .toDo-tab ul li:nth-of-type(2),
+    .toDo-tab ul li:nth-of-type(3) {
+        margin-left: 4.1rem;
+    }
+    
+    .toDo-tab ul li a:link,
+    .toDo-tab ul li a:visited {
+        color: #333;
+    }
+    
+    .toDo-tab ul li a:hover,
+    .toDo-tab ul li a:active {
+        color: #4679C7;
+        border-bottom: 3px solid #4679C7;
+        padding-bottom: 0.5rem;
+    }
+    
+    .toDo-content {
+        position: absolute;
+        /* width: 70rem; */
+        min-height: 15.5rem;
+        top: 22rem;
+        left: 1.5rem;
+        right: 1.5rem;
+        margin: auto;
+        background-color: #fff;
+        box-shadow: 1px 1px 6px 2px #dcdcdc;
+        -webkit-box-shadow: 1px 1px 6px 2px #dcdcdc;
+        -moz-box-shadow: 1px 1px 6px 2px #dcdcdc;
+        z-index: 117;
+    }
+    
+    .paging {
+        position: absolute;
+        width: 16rem;
+        height: 1.8rem;
+        top: 34.4rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 0.1rem;
+        -webkit-border-radius: 0.1rem;
+        -moz-border-radius: 0.1rem;
+        border: 1px solid #ccc;
+        z-index: 9999;
+    }
+    /*请假申请*/
+    
+    .leaving-apply {
+        position: absolute;
+      /*  width: inherit; */
+        min-height: 8rem;
+        left: 1.5rem;
+        right: 1.5rem;
+        top: 40.8rem;
+        background-color: #fff;
+        -webkit-box-shadow: 1px 1px 6px 2px #dcdcdc;
+        box-shadow: 1px 1px 6px 2px #dcdcdc;
+    }
+    
+    .leaving-apply h1 {
+        position: absolute;
+        display: block;
+        top: 1.25rem;
+        left: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 3px solid #4679C7;
+        color: #333;
+        font-size: 1.4em;
+        font-weight: 700;
+    }
+    
+    .apply {
+        width: inherit;
+        height: 3.7rem;
+        line-height: 3.7rem;
+        font-size: 1.125em;
+    }
+    
+    .apply ul {
+        position: absolute;
+        display: inline-block;
+        height: 3.7rem;
+        line-height: 3.7rem;
+        top: 3.7rem;
+        left: 1.5rem;
+        right: 1.5rem;
+        margin: auto;
+        border-top: 1px solid #D5D5D5;
+    }
+    
+    .apply ul li {
+        position: absolute;
+        display: block;
+    }
+    
+    .apply ul li:nth-of-type(1) {
+        left: 0;
+    }
+    
+    .apply ul li:nth-of-type(1) span {
+        position: absolute;
+        display: block;
+        top: 0;
+        bottom: 0;
+        left: 10rem;
+        margin: auto;
+    }
+    
+    .apply ul li:nth-of-type(1) input:nth-of-type(1),
+    .apply ul li:nth-of-type(1) input:nth-of-type(2) {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        max-width: 5rem;
+        height: 1.4rem;
+        border: 1px solid #D5D5D5;
+    }
+    
+    .apply ul li:nth-of-type(1) input:nth-of-type(1) {
+        left: 4.2rem;
+    }
+    
+    .apply ul li:nth-of-type(1) input:nth-of-type(2) {
+        left: 11.6rem;
+    }
+    
+    .apply ul li:nth-of-type(2) {
+        left: 20rem;
+    }
+    
+    .apply ul li:nth-of-type(2) select,
+    .apply ul li:nth-of-type(3) input,
+    .apply ul li:nth-of-type(4) select {
+        margin-left: 1rem;
+        height: 1.4rem;
+        border: 1px solid #D5D5D5;
+    }
+    
+    .apply ul li:nth-of-type(2) select {
+        width: 6.45rem;
+    }
+    
+    .apply ul li:nth-of-type(3) {
+        left: 34rem;
+    }
+    
+    .apply ul li:nth-of-type(3) input {
+        width: 11.5rem;
+    }
+    
+    .apply ul li:nth-of-type(4) {
+        left: 53rem;
+    }
+    
+    .apply ul li:nth-of-type(5) {
+        right: 2rem;
+    }
+    
+    .apply ul li:nth-of-type(5) button {
+        width: 5.5rem;
+        height: 1.8rem;
+        border: 1px solid #A3702A;
+        border-radius: 0.1rem;
+        -webkit-border-radius: 0.1rem;
+        -moz-border-radius: 0.1rem;
+        background-color: #f2a640;
+        color: #fff;
+        font-size: 1em !important;
+        font-family: "微软雅黑";
+    }
+
+
+ /**************************************************************************
+*                                                  兼容处理                                                       *
+* *************************************************************************/
+/*960-1024*/
+@media screen and (min-width:960px) and (max-width:1024px) {
+html {font-size: 16.5px}
+  body{background-color: red;}
+}
+
+/*1024-1280*/
+@media screen and (min-width:1024px) and (max-width:1280px){
+	html {font-size:16.5px}
+
+}
+
+/*1280-1366 笔记本*/
+@media screen and (min-width:1280px) and (max-width:1366px){
+    html {font-size:16px;}
+    .project-info ul {
+	width: auto;
+    }
+
+   .prograss-wrapper {
+    	width: 10rem;
+    }
+
+
+    .project-1 ul li:nth-of-type(2) ,.project-1 ul li:nth-of-type(3) {
+    	margin-left: 0.6rem;
+    }
+
+    .project-1 ul li:nth-of-type(3) button:nth-of-type(1){
+    	right: 15.6rem;
+    }
+
+   .project-1 ul li:nth-of-type(3) button:nth-of-type(2){
+    	right: 19rem;
+    }
+
+.personal-progress-btn{
+    	  width: 31%;
+  	  line-height: 1.4rem;
+  	  margin-left: 14rem;
+    }
+
+    .project-1 ul li:nth-of-type(4) button{
+    	width: 4.5rem;
+    	 margin-left: 1rem;
+    }
+
+    .project-1 ul li:nth-of-type(4) span{
+    	margin-left: 0.6rem;
+    }
+
+    .toDo-content  ul{
+               position: absolute;
+  	width: auto;
+  	height: 3.6rem;
+  	text-align: center;
+  	left: 1.5rem;
+  	right:1.5rem;
+    }
+
+}
+
+/*1280-1366 笔记本*/
+@media screen and (min-width:1280px) and (max-width:1366px){
+
+	.apply ul li:nth-of-type(1) input:nth-of-type(1), .apply ul li:nth-of-type(1) input:nth-of-type(2) {
+		max-width: 4.2rem;
+	}
+
+	 .apply ul li:nth-of-type(1) input:nth-of-type(2){
+	 	margin-left: -0.4rem;
+	 }
+
+	.apply ul li:nth-of-type(1) span{
+		left: 9rem;
+	}
+
+	.apply ul li:nth-of-type(2){
+		left:17rem;
+	}
+	.apply ul li:nth-of-type(3){
+		left: 30rem;
+	}
+
+	.apply ul li:nth-of-type(4) {
+		left:48rem;
+	}
+
+	.apply ul li:nth-of-type(5) button{
+		width: 4.5rem;
+		margin-left: 45%;;
+	}
+
+	    .leaving-apply {
+	    	top:38rem;
+	    }
+}
+
+
+/*1366-1600*/
+@media screen and (min-width:1367px) and (max-width:1600px){
+    html {font-size:18.5px}
+
+}
+
+/*>1600*/
+@media screen and (min-width:1600px) {
+ html {font-size:20px}
+
+}
+    </style>
+</head>
+
+<body ms-controller="main">
+    <div class="todo-wrapper" >
+        <!--模块标题-->
+        <h1 class="t1">个人项目情况</h1>
+        <!--项目信息模块-->
+        <div class="project-info">
+
+
+            <div class="project-1">
+                <ul>
+                    <li>项目编号<span>41226</span></li>
+                    <li>项目名称<span>狮子特工督导系统</span></li>
+                    <li>个人完成度
+                        <!--progress bar-->
+                        <div class="prograss-wrapper">
+                            <div class="progress-bar">
+                                <div class="progress-bar-inner" id="progress-bar-inner" data-finished="94%"> <span class="counter" id="counter"></span> <span class="round-shap" id="round-shap"></span></div>
+                            </div>
+                        </div>
+
+                            <div class="personal-progress-btn">
+                                <button type="button" name="" value="反馈">反馈</button>
+                                <button type="button" name="" value="确定">确定</button>
+                             </div>
+                             <!--modal win-->
+                             <div ms-include-src="url"></div>
+                        
+                        
+                    </li>
+                    <li>剩余工时<span>30工时</span>
+                        <button type="button" name="" value="完成项目">完成项目</button>
+                    </li>
+                </ul>
+            </div>
+
+ 
+      <div class="project-1  project-2">
+         <ul>
+             <li>项目编号<span>NS-117</span></li>
+             <li>项目名称<span>瑞祥支付</span></li>
+             <li>个人完成度
+                 <div class="prograss-wrapper">
+                     <div class="progress-bar">
+                         <div class="progress-bar-inner" id="progress-bar-inner-2" data-finished="38%"> <span class="counter" id="counter-2"></span> <span class="round-shap" id="round-shap"></span></div>
+                     </div>
+                 </div>
+                  <div class="personal-progress-btn"> 
+                                <button type="button" name="" value="反馈">反馈</button>
+                                <button type="button" name="" value="确定">确定</button>
+                             </div>
+             </li>
+             <li>剩余工时<span>30工时</span>
+                 <button type="button" name="" value="完成项目">完成项目</button>
+             </li>
+         </ul>
+     </div>
+
+
+
+
+          <div class="project-1  project-3">
+               <ul>
+                   <li>项目编号<span>HY-8-S</span></li>
+                   <li>项目名称<span>汇盈金服</span></li>
+                   <li>个人完成度
+                       <div class="prograss-wrapper">
+                           <div class="progress-bar">
+                               <div class="progress-bar-inner" id="progress-bar-inner-3" data-finished="61.8%"> <span class="counter" id="counter-3"></span> <span class="round-shap" id="round-shap"></span></div>
+                           </div>
+                       </div>
+                       <div class="personal-progress-btn"> 
+                                <button type="button" name="" value="反馈">反馈</button>
+                                <button type="button" name="" value="确定">确定</button>
+                        </div>
+                   </li>
+                   <li>剩余工时<span>30工时</span>
+                       <button type="button" name="" value="完成项目">完成项目</button>
+                   </li>
+               </ul>
+           </div> 
+
+
+        </div>
+        <!--请假/加班展示模块-->
+        <!--Tab标题-->
+        <div class="toDo-tab">
+            <ul>
+                <li ms-repeat="arrayToDo">
+                    <a ms-attr-href="el.src" ms-click="todoChange(el.src,$event)">{{el.text}}</a>
+                </li>
+            </ul>
+        </div>
+        <!--请假/加班内容-->
+        <div ms-include-src="todoPath" class="toDo-content" id="toDo-content">
+        </div>
+        <!--分页-->
+        <div class="paging">
+        </div>
+        <!--请假模块-->
+        <div class="leaving-apply">
+            <h1>请假申请</h1>
+            <div class="apply">
+                <ul>
+                    <li>请假日期 <span>至</span>
+                        <input type="text" name="from" value="" placeholder="从...">
+                        <input type="text" name="to" value="" placeholder="到...">
+                    </li>
+                    <li>请假类型
+                        <select name="qjlx">
+                            <option value="21">家庭私事</option>
+                            <option value="22">出差</option>
+                            <option value="23">约会</option>
+                        </select>
+                    </li>
+                    <li>请假事由
+                        <input type="text" name="请假事由" value="" placeholder="请填写...">
+                    </li>
+                    <li>交接人
+                        <select name="jjr">
+                            <option value="41">林峰</option>
+                            <option value="42">Eric</option>
+                            <option value="43">谢霆锋</option>
+                        </select>
+                    </li>
+                    <li>
+                        <button type="submit" name="" value="提交申请">提交申请</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--个人项目情况-->
+     <script>
+    // var todoModel = avalon.define("project_task", function(vm) {
+    //     vm.project_task = {};
+    // });
+
+    // $(function() {
+    //     $.getJSON("http://dudao.shizitegong.com:8080/Sztg/webApi/work/listTodo").done(function(data) {
+    //         todoModel.project_task = data;
+    //     });
+       
+    //     avalon.scan(document.documentElement);
+    // });
+
+    //  console.log("ok");
+
+
+
+
+
+
+    // $.ajax({
+    //     url: url,
+    //     //去掉数据模型中的所有函数
+    //     data: JSON.parse(JSON.stringify(vm.$model)), 
+    //     success: function(ajaxData) {
+    //         //需要自己在这里定义一个函数,将缺少的属性补上,无用的数据去掉，
+    //     filterData:function(){
+
+
+    //     },
+    //         //格式不正确的数据转换好 ajaxData最后必须为一个对象
+    //         ajaxData = filterData(ajaxData)
+
+    //             //全部数据，先拷贝到一个全新空对象中，再赋值，防止影响原来的$model
+    //         var newData = avalon.mix(true, {}, vm.$model, ajaxData)
+    //         for (var i in newData) {
+    //             if (vm.hasOwnProperty(i) && i !== "hasOwnProperty") { 
+
+    //             //更新数据
+    //                 vm[i] = newData[i]
+    //             }
+    //         }
+
+    //     }
+    // })
+
+
+
+// require(["./mmRequest","./mmPromise"], function(avalon) {
+//     avalon.ajax({
+//         url:"http://dudao.shizitegong.com:8080/Sztg/webApi/work/listTodo"
+//     });
+// });
+
+
+
+
+//avalon.ajax({
+             //   url: "http://dudao.shizitegong.com:8080/Sztg/webApi/work/listTodo",
+           //     type: "get",
+          //      dataType: "json"
+      //      }).done(function (res) {
+       //         avalon.log(" success");
+       //    }).fail(function(){
+        //        avalon.log(" fail");
+    //    });
+
+
+
+</script>
+
+    <!--环行进度图-->
+    <script>
+    $(document).ready(function() {
+        if ((oCounter !== null || oCounter !== undefined || oCounter !== '') && (oCounter_2 !== null || oCounter_2 !== undefined || oCounter_2 !== '') && (oCounter_3 !== null || oCounter_3 !== undefined || oCounter_3 !== '')) {
+
+            var oCounter = $("#counter");
+            var oCounter_2 = $("#counter-2");
+            var oCounter_3 = $("#counter-3");
+
+            var oInnerBar = $("#progress-bar-inner");
+            var oInnerBar_2 = $("#progress-bar-inner-2");
+            var oInnerBar_3 = $("#progress-bar-inner-3");
+
+            var oFinished = $("#progress-bar-inner").data("finished");
+            var oFinished_2 = $("#progress-bar-inner-2").data("finished");
+            var oFinished_3 = $("#progress-bar-inner-3").data("finished");
+
+
+            oInnerBar.css({
+                "width": oFinished
+            });
+            oInnerBar_2.css({
+                "width": oFinished_2
+            });
+            oInnerBar_3.css({
+                "width": oFinished_3
+            });
+
+            // alert(oFinished);
+            oCounter.text(oFinished);
+            oCounter_2.text(oFinished_2);
+            oCounter_3.text(oFinished_3);
+
+        } else {
+            alert("字符不为空");
+        };
+    });
+    </script>
+</body>
+
+</html>
